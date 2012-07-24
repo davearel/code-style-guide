@@ -114,6 +114,25 @@ Some page components may be considered more modular than others. These container
 }
 ```
 
+# JavaScript
+
+### Don't polute the global namespace
+- Limit the use of globals.
+- Provide a namespace for the application, and subnames for all modules.
+
+```javascript
+// Application namespace
+var App = {};
+
+// User Model
+App.User = Backbone.Model.extend({
+   ...
+});
+
+// User instance
+App.current_user = new App.User();
+```
+
 
 # General
 
